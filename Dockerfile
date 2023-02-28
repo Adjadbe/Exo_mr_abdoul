@@ -1,18 +1,11 @@
-# Utilisez une image de base légère avec Node.js préinstallé
-FROM phina5656/app:latest
+# Utilisation d'une image de base
+FROM nginx:latest
 
-# Définissez le répertoire de travail dans le conteneur
-WORKDIR /app
+# Copier les fichiers du site web dans l'image
+COPY . /usr/share/nginx/html
 
-# Copiez le fichier package.json dans le conteneur
-
-
-
-# Copiez tous les fichiers de l'application dans le conteneur
-COPY . .
-
-# Définir le port sur lequel l'application écoutera
+# Exposer le port sur lequel le serveur web écoute
 EXPOSE 80
 
-# Démarrez l'application
-CMD ["npm", "start"]
+# Définir la commande pour lancer le serveur web
+CMD ["nginx", "-g", "daemon off;"]
