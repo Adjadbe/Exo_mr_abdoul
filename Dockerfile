@@ -1,5 +1,5 @@
 # Utilisez une image de base légère avec Node.js préinstallé
-FROM phina/app:latest
+FROM phina5656/app:latest
 
 # Définissez le répertoire de travail dans le conteneur
 WORKDIR /app
