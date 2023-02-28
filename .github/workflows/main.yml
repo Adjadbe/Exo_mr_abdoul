@@ -20,7 +20,7 @@ jobs:
         tags: my-docker-registry/my-image:${{ github.sha }}
 
     - name: Deploy Docker container
-      uses: phina5656/ssh-action@master
+      uses: appleboy/ssh-action@master
       with:
         host: my-remote-server
         username: ${{ secrets.SSH_USERNAME }}
